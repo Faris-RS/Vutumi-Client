@@ -17,12 +17,7 @@ import userStore from "./store/userStore";
 import signinStore from "./store/signinStore";
 import RegisterPage from "./pages/registerPage";
 import userdetailsStore from "./store/userdetailsStore";
-import Form from "./components/postForm/form";
-import EditProfile from "./components/profile/editProfile";
 import ChatPage from "./pages/chatPage";
-import Test from "./components/test"
-import TicTacToe from "./pages/games/tictactoe";
-import Modal from "./components/posts/modal";
 import OtherProfile from "./components/profile/otherProfile";
 
 export default function App() {
@@ -148,7 +143,6 @@ export default function App() {
           {/* <Route exact path="/home" element={<HomePage />} /> */}
           <Route exact path="/profile" element={isLogged ? <ProfilePage /> : <Navigate to="/login" />} />
           <Route path="/otherprofile/:propValue" element={isLogged ? <OtherProfile /> : <Navigate to="/login" />} />
-          <Route exact path="/form" element={isLogged ? <Form /> : <Navigate to="/login" />} />
           {/* <Route exact path="/editProfile" element={<EditProfile />} /> */}
           <Route
             exact
@@ -156,9 +150,6 @@ export default function App() {
             element={isOauthNew ? <RegisterPage /> : <Navigate to="/" />}
           />
           <Route exact path = '/chat' element={<ChatPage/>}/>
-          <Route exact path = '/test' element={<Test/>}/>
-          <Route exact path = '/tic' element={<TicTacToe/>}/>
-          <Route exact path = '/modal' element={<Modal/>}/>
         </Routes>
       </Router>
     </>
