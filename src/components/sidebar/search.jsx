@@ -7,7 +7,7 @@ import PeopleModal from "../posts/peopleModal";
 import modalStore from "../../store/modalStore";
 import animationStore from "../../store/animationStore";
 
-const socket = io(import.meta.env.VITE_USER_URL);
+// const socket = io(import.meta.env.VITE_USER_URL);
 
 export default function Search() {
   const [query, setQuery] = useState("");
