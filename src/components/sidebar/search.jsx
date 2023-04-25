@@ -52,20 +52,20 @@ export default function Search() {
 
   function handleSearch(e) {
     setQuery(e.target.value);
-    socket.emit("search", e.target.value);
+    // socket.emit("search", e.target.value);
   }
 
-  useEffect(() => {
-    socket.on("searchResult", (data) => {
-      setResults(data);
-    });
-    return () => {
-      socket.off("searchResult");
-    };
-  }, []);
-  socket.on("searchResult", (result) => {
-    setResults(result.data);
-  });
+  // useEffect(() => {
+  //   socket.on("searchResult", (data) => {
+  //     setResults(data);
+  //   });
+  //   return () => {
+  //     socket.off("searchResult");
+  //   };
+  // }, []);
+  // socket.on("searchResult", (result) => {
+  //   setResults(result.data);
+  // });
 
   const searchBar = () => {
     setShowSearch(!showSearch);

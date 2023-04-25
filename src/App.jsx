@@ -149,7 +149,7 @@ export default function App() {
             path="/register"
             element={isOauthNew ? <RegisterPage /> : <Navigate to="/" />}
           />
-          <Route exact path = '/chat' element={<ChatPage/>}/>
+          {/* <Route exact path = '/chat' element={<ChatPage/>}/> */}
         </Routes>
       </Router>
     </>
