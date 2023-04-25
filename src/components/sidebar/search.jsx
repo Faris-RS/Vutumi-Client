@@ -6,8 +6,9 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import PeopleModal from "../posts/peopleModal";
 import modalStore from "../../store/modalStore";
 import animationStore from "../../store/animationStore";
+import { io } from "socket.io-client";
 
-// const socket = io(import.meta.env.VITE_USER_URL);
+const socket = io(import.meta.env.VITE_USER_URL);
 
 export default function Search() {
   const [query, setQuery] = useState("");
@@ -51,20 +52,20 @@ export default function Search() {
 
   function handleSearch(e) {
     setQuery(e.target.value);
-    // socket.emit("search", e.target.value);
+    socket.emit("search", e.target.value);
   }
 
-  // useEffect(() => {
-  //   socket.on("searchResult", (data) => {
-  //     setResults(data);
-  //   });
-  //   return () => {
-  //     socket.off("searchResult");
-  //   };
-  // }, []);
-  // socket.on("searchResult", (result) => {
-  //   setResults(result.data);
-  // });
+  useEffect(() => {
+    socket.on("searchResult", (data) => {
+      setResults(data);
+    });
+    return () => {
+      socket.off("searchResult");
+    };
+  }, []);
+  socket.on("searchResult", (result) => {
+    setResults(result.data);
+  });
 
   const searchBar = () => {
     setShowSearch(!showSearch);
