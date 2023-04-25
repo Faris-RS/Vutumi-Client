@@ -17,7 +17,6 @@ import userStore from "./store/userStore";
 import signinStore from "./store/signinStore";
 import RegisterPage from "./pages/registerPage";
 import userdetailsStore from "./store/userdetailsStore";
-import ChatPage from "./pages/chatPage";
 import OtherProfile from "./components/profile/otherProfile";
 
 export default function App() {
