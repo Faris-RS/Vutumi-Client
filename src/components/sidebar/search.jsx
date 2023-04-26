@@ -6,9 +6,9 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import PeopleModal from "../posts/peopleModal";
 import modalStore from "../../store/modalStore";
 import animationStore from "../../store/animationStore";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 
-const socket = io(import.meta.env.VITE_USER_URL);
+// const socket = io(import.meta.env.VITE_USER_URL);
 
 export default function Search() {
   const [query, setQuery] = useState("");
