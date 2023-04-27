@@ -26,16 +26,16 @@ export default function Login() {
   };
 
   const github = () => {
-    window.open(import.meta.env.VITE_GITHUB_URL, "_self");
-    newWindow.addEventListener("unload", () => {
-      window.location.reload(false);
-    });
+    // window.open(import.meta.env.VITE_GITHUB_URL, "_self");
+    // newWindow.addEventListener("unload", () => {
+    //   window.location.reload(false);
+    // });
   };
   const google = () => {
-    const newWindow = window.open(import.meta.env.VITE_GOOGLE_URL, "_self");
-    newWindow.addEventListener("unload", () => {
-      window.location.reload(false);
-    });
+    // const newWindow = window.open(import.meta.env.VITE_GOOGLE_URL, "_self");
+    // newWindow.addEventListener("unload", () => {
+    //   window.location.reload(false);
+    // });
   };
 
   const forgotPassword = () => {

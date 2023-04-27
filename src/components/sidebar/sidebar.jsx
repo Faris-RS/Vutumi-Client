@@ -27,7 +27,8 @@ const Sidebar = () => {
     setIsConnection,
     refresh,
   } = modalStore();
-  const { isHovered, setIsHovered } = animationStore();
+  const { isHovered, setIsHovered, setLoading, loading } = animationStore();
+  const { connectionRequest, setIsConnectionRequest } = userProfileStore();
 
   const { setUserProfile } = userProfileStore();
   const Navigate = useNavigate();
@@ -163,7 +164,7 @@ const Sidebar = () => {
             }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            // onClick={() => Navigate("/chat")}
+            onClick={() => Navigate("/chat")}
           >
             Open Chat
           </h3>{" "}
